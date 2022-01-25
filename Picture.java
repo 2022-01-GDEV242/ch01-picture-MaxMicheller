@@ -14,6 +14,7 @@ public class Picture
 {
     private Square clif;
     private Person bluePerson;
+    private Person magentaPerson;
     private Triangle spike1;
     private Triangle spike2;
     private Circle sun;
@@ -26,6 +27,7 @@ public class Picture
     {
         clif = new Square();
         bluePerson = new Person();
+        magentaPerson = new Person();
         spike1 = new Triangle(); 
         spike2 = new Triangle();
         sun = new Circle();
@@ -48,14 +50,21 @@ public class Picture
             bluePerson.moveHorizontal(30);
             bluePerson.moveVertical(40);
             bluePerson.makeVisible();
+            
+            magentaPerson.changeColor("magenta");
+            magentaPerson.moveHorizontal(-40);
+            magentaPerson.moveVertical(-40);
+            magentaPerson.makeVisible();
     
-            spike1.moveHorizontal(345);
-            spike1.moveVertical(270);
+            spike1.moveHorizontal(75);
+            spike1.moveVertical(130);
             spike1.makeVisible();
+            spike1.changeColor("red");
 
-            spike2.moveHorizontal(285);
-            spike2.moveVertical(270);
+            spike2.moveHorizontal(135);
+            spike2.moveVertical(130);
             spike2.makeVisible();
+            spike2.changeColor("red");
 
             sun.changeColor("yellow");
             sun.moveHorizontal(-264);
@@ -73,6 +82,7 @@ public class Picture
     {
         clif.changeColor("black");
         bluePerson.changeColor("Black");
+        magentaPerson.changeColor("Black");
         spike1.changeColor("black");
         spike2.changeColor("black");
         sun.changeColor("black");
@@ -85,6 +95,7 @@ public class Picture
     {
         clif.changeColor("green");
         bluePerson.changeColor("blue");
+        magentaPerson.changeColor("magenta");
         spike1.changeColor("red");
         spike2.changeColor("red");
         sun.changeColor("yellow");
