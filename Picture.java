@@ -12,9 +12,10 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
+    private Square clif;
+    private Person bluePerson;
+    private Triangle spike1;
+    private Triangle spike2;
     private Circle sun;
     private boolean drawn;
 
@@ -23,9 +24,10 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
+        clif = new Square();
+        bluePerson = new Person();
+        spike1 = new Triangle(); 
+        spike2 = new Triangle();
         sun = new Circle();
         drawn = false;
     }
@@ -36,26 +38,29 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
+            clif.moveHorizontal(-560);
+            clif.moveVertical(70);
+            clif.changeSize(500);
+            clif.changeColor("green");
+            clif.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
+            bluePerson.changeColor("blue");
+            bluePerson.moveHorizontal(30);
+            bluePerson.moveVertical(40);
+            bluePerson.makeVisible();
     
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
+            spike1.moveHorizontal(345);
+            spike1.moveVertical(270);
+            spike1.makeVisible();
+
+            spike2.moveHorizontal(285);
+            spike2.moveVertical(270);
+            spike2.makeVisible();
+
             sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
+            sun.moveHorizontal(-264);
+            sun.moveVertical(-124);
+            sun.changeSize(100);
             sun.makeVisible();
             drawn = true;
         }
@@ -66,9 +71,10 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
+        clif.changeColor("black");
+        bluePerson.changeColor("Black");
+        spike1.changeColor("black");
+        spike2.changeColor("black");
         sun.changeColor("black");
     }
 
@@ -77,9 +83,10 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
+        clif.changeColor("green");
+        bluePerson.changeColor("blue");
+        spike1.changeColor("red");
+        spike2.changeColor("red");
         sun.changeColor("yellow");
     }
 }
